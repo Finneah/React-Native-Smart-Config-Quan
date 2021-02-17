@@ -436,6 +436,7 @@
 
 - (ESPTouchResult *) executeForResult
 {
+    [self setPackageBroadcast:true];
     return [[self executeForResults:1] objectAtIndex:0];
 }
 
@@ -514,6 +515,11 @@
 }
 
 - (void)setPackageBroadcast:(BOOL)broadcast {
+     if (DEBUG_ON)
+    {
+          NSLog(@"ESPTouchTask setPackageBroadcast() broadcast should be true");
+    }
+  
     [self._parameter setBroadcast:broadcast];
 }
 
